@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class Q1 {
+
+ public static int numberDivisible(int[] list, int n) {
+ // Write your codes here for QUESTION 1
+ }
+
+ public static void main(String[] args) {
+
+  String strNumbers;
+  int[] numberArray;
+  int n;
+
+  Scanner in = new Scanner(System.in);
+
+  System.out.println("Please input a list of numbers separated by spaces:");
+
+  strNumbers = in.nextLine();
+
+  if (strNumbers.trim().isEmpty()) {
+   System.out.println("Nothing to do!");
+   return;
+  }
+
+  String[] strNumberArray = strNumbers.split("\\s+");
+
+  numberArray = new int[strNumberArray.length];
+
+  for (int i = 0; i < strNumberArray.length; i++)
+   numberArray[i] = Integer.parseInt(strNumberArray[i]);
+
+  System.out.print("Please input an integer: ");
+
+  n = in.nextInt();
+
+  if (n == 0) {
+   System.out.println("Zero is not a valid divisor!");
+   return;
+  }
+
+  System.out.println("The number of elements divisible by " + n + " is " + numberDivisible(numberArray, n));
+ }
+}
